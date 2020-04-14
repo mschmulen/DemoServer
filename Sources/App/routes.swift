@@ -14,4 +14,11 @@ func routes(_ app: Application) throws {
     app.get("boats", use: boatController.index)
     app.post("boats", use: boatController.create)
     app.on(.DELETE, "boats", ":id", use: boatController.delete)
+    
+    
+    let userController = UserController()
+    app.get("users", use: userController.index)
+    app.post("users", use: userController.create)
+    app.on(.DELETE, "users", ":id", use: userController.delete)
+    
 }
