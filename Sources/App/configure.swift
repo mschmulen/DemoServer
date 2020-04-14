@@ -11,7 +11,7 @@ public func configure(_ app: Application) throws {
     app.databases.use(.sqlite(.memory), as: .sqlite)
 
     // Configure migrations
-    app.migrations.add(CreateTodo())
+    app.migrations.add(CreateBoat())
     
     try app.autoMigrate().wait()
     

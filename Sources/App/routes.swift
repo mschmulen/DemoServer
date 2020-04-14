@@ -9,9 +9,9 @@ func routes(_ app: Application) throws {
     app.get("hello") { req in
         return "Hello, world!"
     }
-
-    let todoController = TodoController()
-    app.get("todos", use: todoController.index)
-    app.post("todos", use: todoController.create)
-    app.on(.DELETE, "todos", ":todoID", use: todoController.delete)
+    
+    let boatController = BoatController()
+    app.get("boats", use: boatController.index)
+    app.post("boats", use: boatController.create)
+    app.on(.DELETE, "boats", ":id", use: boatController.delete)
 }
