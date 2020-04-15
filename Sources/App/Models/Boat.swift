@@ -19,6 +19,15 @@ final class Boat: Model, Content {
     @Field(key: "builder")
     var builder: String
     
+    @Field(key: "price")
+    var price: Double
+
+    @Field(key: "isFeatured")
+    var isFeatured: Bool
+    
+    @Parent(key: "userReference")
+    var userReference: UserModel
+    
     init() { }
     
     init(
@@ -26,12 +35,19 @@ final class Boat: Model, Content {
         title: String,
         name: String,
         length: Float,
-        builder: String
+        builder: String,
+        price: Double,
+        isFeatured: Bool,
+        userReference: UUID
     ) {
         self.id = id
         self.title = title
         self.name = name
         self.length = length
         self.builder = builder
+        self.price = price
+        self.isFeatured = isFeatured
+        self.$userReference.id = userReference
     }
 }
+

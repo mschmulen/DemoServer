@@ -45,6 +45,12 @@ extension BoatController {
             .unwrap(or: Abort(.notFound))
             .flatMap { model in
                 model.title = input.title
+                model.name = input.name
+                model.length = input.length
+                model.builder = input.builder
+                //model.userID = input.userID
+                model.price = input.price
+                model.isFeatured = input.isFeatured
                 return model.save(on: req.db).map { model }
         }
     }
